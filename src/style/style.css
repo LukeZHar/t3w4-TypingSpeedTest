@@ -15,3 +15,25 @@ body {
     padding: 10px;
     margin-bottom: 20px;
 }
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.results {
+    color: grey;
+    margin-bottom: 20px;
+}
+
+.play-button {
+    padding: 8px 20px;
+    background-color: aquamarine;
+    border: none;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: darkcyan;
+}
