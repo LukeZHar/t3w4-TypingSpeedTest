@@ -1,4 +1,7 @@
 console.log("Typing Speed Test Begins!!"); 
+// Global variables
+let totalCharacters = 0;
+let correctCharacters = 0;
 
 // Element selectors
 const playButton = document.getElementById("playButton");
@@ -29,6 +32,7 @@ async function displaySentence(){
 
 // event listeners
 playButton.addEventListener("click", startGame);
+inputField.addEventListener("input", trackTyping);
 
 //  Start the game function 
 function startGame(){
@@ -41,6 +45,33 @@ function startGame(){
     sentenceDisplay.style.display = "block";
 }
 
+// Typing and tracking functions
 function trackTyping(){
-    
+    const typeText = inputField.value;
+    const sentence = sentenceDisplay.textContent;
+
+    totalCharacters = typeText.length;
+    correctCharacters = countCorrectCharacters(typeText, sentence);
+
+    updateStats();
+}
+
+function countCorrectCharacters(){
+
+}
+
+function updateStats(){
+
+}
+
+function displayResults(){
+
+}
+
+function calculateWPM(){
+
+}
+
+function endGame(){
+
 }
