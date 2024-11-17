@@ -1,0 +1,17 @@
+body {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.sentence-display {
+    color: grey;
+    padding: 10px;
+    margin-bottom: 20px;
+}
