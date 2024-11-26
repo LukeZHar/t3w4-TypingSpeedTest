@@ -16,16 +16,27 @@ const restartButton = document.getElementById("restartButton");
 
 
 // Sentence fetching
-async function getRandomSentence(wordCount){
+async function getRandomSentence(wordCount) {
+    const fallbackSentences = [
+        "The quick brown fox jumps over the lazy dog.",
+        "A journey of a thousand miles begins with a single step.",
+        "The only way to do great work is to love what you do.",
+        "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+        "The future belongs to those who believe in the beauty of their dreams."
+        // Add more fallback sentences
+    ];
+    
     try {
         const response = await fetch(`https://random-word-api.herokuapp.com/word?number=${wordCount}`);
+        if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         let sentence = data.join(' ');
         console.log(sentence);
         return sentence;
     } catch (error) {
         console.error("Failed to fetch sentence:", error);
-        return "Error Loading sentence, please try again."
+        // Return a random fallback sentence
+        return fallbackSentences[Math.floor(Math.random() * fallbackSentences.length)];
     }
 }
 
